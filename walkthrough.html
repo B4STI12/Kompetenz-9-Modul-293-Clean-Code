@@ -3,16 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Schritt-für-Schritt Anleitung für den Einstieg in den Forex-Handel.">
+  <meta name="description" content="Schritt-für-Schritt Anleitung für den Einstieg in den Forex-Handel. Mit Video-Erklärung und Bildmaterial.">
   <title>Walkthrough – ForexGuide</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"></noscript>
+  <style>
+    .media-section {
+      margin: 40px 0;
+    }
+    .media-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .image-placeholder {
+      background: var(--color-surface);
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius);
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    .image-placeholder span {
+      font-size: 2rem;
+    }
+    .contact-box {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .contact-box p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+    }
+    .contact-box a {
+      color: var(--color-accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <a href="index.html" class="logo">
+    <a href="index.html" class="logo" aria-label="ForexGuide Startseite">
       <div class="logo-icon">F</div>
       <div>
         <h1>ForexGuide</h1>
@@ -21,7 +97,7 @@
     </a>
   </header>
 
-  <nav>
+  <nav aria-label="Hauptnavigation">
     <ul>
       <li><a href="index.html">Start</a></li>
       <li><a href="walkthrough.html" class="active">Walkthrough</a></li>
@@ -37,9 +113,43 @@
       <p>Schritt-für-Schritt in die Welt der Währungen</p>
     </div>
 
-    <div class="warning-box">
+    <div class="warning-box" role="alert">
       <span>⚠️</span>
       <span>Forex-Handel birgt erhebliche Risiken. Dieser Walkthrough dient nur zur Information und ist keine Aufforderung zum Handeln.</span>
+    </div>
+
+    <!-- Einführungsvideo -->
+    <div class="media-section">
+      <h3>📺 Einführungsvideo: Was ist Forex-Trading?</h3>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/eTtbOBOBCVw"
+          title="Forex Trading Einführung für Anfänger"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Bildübersicht -->
+    <div class="media-section">
+      <h3>🖼️ Überblick: Die wichtigsten Konzepte</h3>
+      <div class="image-grid">
+        <figure>
+          <img src="img/waehrungspaar.png" alt="Erklärung eines Währungspaares am Beispiel EUR/USD" width="400" height="225" style="width:100%; border-radius:8px; border:1px solid var(--color-border);">
+          <figcaption style="font-size:0.8rem; color:var(--color-text-muted); margin-top:6px;">Aufbau eines Währungspaares</figcaption>
+        </figure>
+        <figure>
+          <img src="img/pip.png" alt="Visualisierung was ein Pip bei EUR/USD bedeutet" width="400" height="225" style="width:100%; border-radius:8px; border:1px solid var(--color-border);">
+          <figcaption style="font-size:0.8rem; color:var(--color-text-muted); margin-top:6px;">Was ist ein Pip?</figcaption>
+        </figure>
+        <figure>
+          <img src="img/stoploss.png" alt="Chart mit eingezeichnetem Stop-Loss und Take-Profit" width="400" height="225" style="width:100%; border-radius:8px; border:1px solid var(--color-border);">
+          <figcaption style="font-size:0.8rem; color:var(--color-text-muted); margin-top:6px;">Stop-Loss und Take-Profit im Chart</figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:12px; font-size:0.8rem; color:var(--color-text-muted);">💡 Eigene Bilder hier einfügen: Dateien in den Ordner <code>img/</code> legen und Dateinamen oben anpassen.</p>
     </div>
 
     <div class="steps">
@@ -95,10 +205,20 @@
         <div class="step-number">7</div>
         <div class="step-content">
           <h3>Demo-Konto nutzen</h3>
-          <p>Bevor du echtes Geld einsetzt, übe immer zuerst mit einem <strong>Demo-Konto</strong>. Die meisten Broker bieten kostenlose Demo-Konten an, die echte Marktbedingungen simulieren. Erst wenn du auf dem Demo-Konto konsequent profitabel bist, solltest du über echtes Geld nachdenken.</p>
+          <p>Bevor du echtes Geld einsetzt, übe immer zuerst mit einem <strong>Demo-Konto</strong>. Die meisten Broker bieten kostenlose Demo-Konten an, die echte Marktbedingungen simulieren. Mehr Infos: <a href="https://www.investopedia.com/forex" target="_blank" rel="noopener noreferrer">Investopedia Forex Guide</a>.</p>
         </div>
       </div>
     </div>
+
+    <!-- Kontakt -->
+    <div class="contact-box">
+      <div>
+        <strong>Fragen zum Walkthrough?</strong>
+        <p>Bei Fragen oder Feedback kannst du mich direkt per E-Mail erreichen.</p>
+      </div>
+      <a href="mailto:bastian.binus@bbzbl-it.ch">✉️ bastian.binus@bbzbl-it.ch</a>
+    </div>
+
   </main>
 
   <footer>
@@ -118,8 +238,8 @@
       </ul>
     </div>
     <div class="footer-section">
-      <h3>Projekt</h3>
-      <p>Erstellt im Rahmen von Modul 293 an der BBZBL.</p>
+      <h3>Kontakt</h3>
+      <p><a href="mailto:bastian.binus@bbzbl-it.ch" style="color:var(--color-accent);">bastian.binus@bbzbl-it.ch</a></p>
     </div>
     <div class="footer-bottom">
       <p>© 2025 ForexGuide – Bastian Binus · Schulprojekt BBZBL · Keine Anlageberatung</p>
